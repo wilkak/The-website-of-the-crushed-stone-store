@@ -1,0 +1,340 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - "ТД" Александровское</title>
+    <script src="https://kit.fontawesome.com/a0728c37d3.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@900&display=swap" rel="stylesheet">
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Scripts/modernizr")
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(90990390, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/90990390" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+</head>
+<body class="body">
+    <header>
+        <div class="container header">
+            <div class="row">
+                <div class="col-6 header-logo">
+                    <div class="header-logo-block">
+                        <a>ООО "ТД" Александровское</a>
+                        <h5>ИНН: 0272918380</h5>
+                        <button class="header__btn" data-bs-toggle="modal" data-bs-target="#exampleModal2">ЗАКАЗАТЬ ЗВОНОК</button>
+                    </div>
+                </div>
+
+                <div class="col header-info">
+                    <div class="header-info-block">
+                        <div class="header-info-block-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="header-info-block-text">
+                            <a>Телефон</a>
+                            </br>
+                            <a class="header-link" href="tel:+73516133336">+7 (35161) 3-33-36</a>
+                            </br>
+                            <a class="header-link" href="tel:+79127924555">+7 (912) 792-45-55</a>
+                            </br>
+                            <a class="header-link" href="tel:+79993717555">+7 (999) 371-75-55</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col header-info">
+                    <div class="header-info-block">
+                        <div class="header-info-block-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="header-info-block-text">
+                            <a>Адрес</a>
+                            </br>
+                            <a class="header-link">г. Сатка, ул. 100-летия комбината Магнезит 3б</a>
+                            </br>
+                            <a class="header-link">ст. Тюльма Кбш. жд</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col header-info">
+                    <div class="header-info-block">
+                        <div class="header-info-block-icon">
+                            <i class="fa-sharp fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="header-info-block-text">
+                            <a>Почта</a>
+                            </br>
+                            <a class="header-link" href="mailto:tdalex2021@mail.ru">tdalex2021@mail.ru</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark ">
+            <div class="container container-nav">
+
+                <button class="navbar-toggler" id="OpenMenu" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li>
+                            <a class="nav-item " style="text-decoration: none;  font-family: 'Montserrat', sans-serif; color:white" href="/">Главная</a>
+                        </li>
+                        <li>
+                            <a class="nav-item " style="text-decoration: none; font-family: 'Montserrat', sans-serif; color: white" href="/#section-products">Продукты</a>
+                        </li>
+
+                        <li>
+                            <a class="nav-item" style="text-decoration: none; font-family: 'Montserrat', sans-serif; color: white" href="/#section-gallery">Галерея</a>
+                        </li>
+                        <li>
+                            <a class="nav-item" style="text-decoration: none; font-family: 'Montserrat', sans-serif; color: white" href="/#section-about">О компании</a>
+                        </li>
+                        <li>
+                            <a class="nav-item" style="text-decoration: none; font-family: 'Montserrat', sans-serif; color: white" href="/#section-contact">Контакты</a>
+                        </li>
+                        <li>
+                            <a class="nav-item" style="text-decoration: none; font-family: 'Montserrat', sans-serif; color: white" href="/Info/Index">Документация</a>
+                        </li>
+
+
+                        @if (Request.IsAuthenticated)
+                        {
+
+                            if (User.IsInRole("Admin"))
+                            {
+                                <li>
+                                    @Html.ActionLink("Админ зона", "Index", "Dashboard", new { area = "Admin" }, new { @class = "nav-item", style = "text-decoration: none; font-family: 'Montserrat', sans-serif; color: white" })
+                                </li>
+                            }
+
+                            <li style="margin-right:0 !important">
+                                @Html.ActionLink("Выход", "Logout", "Account", null, new { @class = "nav-item", style = "text-decoration: none; font-family: 'Montserrat', sans-serif; color: white" })
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section-main">
+        @RenderBody()
+    </section>
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title" id="offcanvasScrollingLabel" style="font-family: 'Montserrat', sans-serif; color: #018A76;">Меню</h2>
+            <button type="button" id="OpenMenu" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div>
+                <ul class="navbar-nav navbar-nav-mobile me-auto mb-2 mb-lg-0">
+                    <li>
+                        <a class="nav-item nav-item-mobile" style="text-decoration: none; font-size: 16px; font-family: 'Montserrat', sans-serif; color: black" href="/">Главная</a>
+                    </li>
+                    <li>
+                        <a class="nav-item nav-item-mobile" style="text-decoration: none; font-size: 16px; font-family: 'Montserrat', sans-serif; color: black" href="/#section-products">Продукты</a>
+                    </li>
+                    <li>
+                        <a class="nav-item nav-item-mobile" style="text-decoration: none; font-size: 16px; font-family: 'Montserrat', sans-serif; color: black" href="/#section-gallery">Галерея</a>
+                    </li>
+                    <li>
+                        <a class="nav-item nav-item-mobile" style="text-decoration: none; font-size: 16px; font-family: 'Montserrat', sans-serif; color: black" href="/#section-about">О компании</a>
+                    </li>
+                    <li>
+                        <a class="nav-item nav-item-mobile" style="text-decoration: none; font-size: 16px; font-family: 'Montserrat', sans-serif; color: black" href="/#section-contact">Контакты</a>
+                    </li>
+
+                    <li>
+                        <a class="nav-item nav-item-mobile" style="text-decoration: none; font-size: 16px; font-family: 'Montserrat', sans-serif; color: black" href="/Info/Index">Документация</a>
+                    </li>
+
+
+                    @if (Request.IsAuthenticated)
+                    {
+
+                        if (User.IsInRole("Admin"))
+                        {
+                            <li>
+                                @Html.ActionLink("Админ зона", "Index", "Dashboard", new { area = "Admin" }, new { @class = "nav-item nav-item-mobile", style = "text-decoration: none; font-size: 16px; font-family: 'Montserrat', sans-serif; color: black" })
+                            </li>
+                        }
+
+                        <li>
+                            @Html.ActionLink("Выход", "Logout", "Account", null, new { @class = "nav-item nav-item-mobile", style = "text-decoration: none; font-size: 16px; font-family: 'Montserrat', sans-serif; color: black" })
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="text-white" style="background:#018A76; font-family: 'Montserrat', sans-serif; ">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!--Grid row-->
+            <div class="row">
+                <!--Grid column-->
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">ООО "ТД" Александровское</h5>
+
+                    <p>
+ Александровский карьер расположен в республике Башкортостан, Белорецкий район. Здесь в промышленных масштабах добывается кубовидный щебень для устройства дорожных покрытий автомагистралей, оснований при сооружении автострад, в асфальтобетоне.
+                    </p>
+                </div>
+                <!--Grid column-->
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0 footer-notuseblock">
+
+
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Навигация</h5>
+
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="/" class="text-white">Главная</a>
+                        </li>
+                        <li>
+                            <a href="/#section-products" class="text-white">Продукты</a>
+                        </li>
+                        <li>
+                            <a href="/#section-gallery" class="text-white">Галерея</a>
+                        </li>
+                        <li>
+                            <a href="/#section-about" class="text-white">О компании</a>
+                        </li>
+                        <li>
+                            <a href="/#section-contact" class="text-white">Контакты</a>
+                        </li>
+                        <li>
+                            <a href="/Info/Index" class="text-white">Документация</a>
+                        </li>
+
+                        @if (Request.IsAuthenticated)
+                        {
+
+                            if (User.IsInRole("Admin"))
+                            {
+                                <li>
+                                    @Html.ActionLink("Админ зона", "Index", "Dashboard", new { area = "Admin" }, new { @class = "text-white" })
+                                </li>
+                            }
+
+                            <li>
+                                @Html.ActionLink("Выход", "Logout", "Account", null, new { @class = "text-white" })
+                            </li>
+                        }
+                        else
+                        {
+                            <!--Если не авторизован и находится на странице логина-->
+                            if (ViewBag.Title == "Login")
+                            {
+
+                                <li>
+                                    @Html.ActionLink("Вход", "Login", "Account", null, new { @class = "text-white" })
+                                </li>
+                            }
+                            <!--Если не авторизован и не находится на странице логина-->
+                            if ((ViewBag.Title != "Login"))
+                            {
+
+                                <li>
+                                    @Html.ActionLink("Вход", "Login", "Account", null, new { @class = "text-white" })
+                                </li>
+                            }
+
+                        }
+                    </ul>
+                </div>
+            </div>
+            <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            <a class="text-white" style="text-decoration:none" href="">ООО "ТД" Александровское</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+
+    <!-- Модальное окно -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body" style="text-align: center;">
+                    <div class="card " style="border:none;">
+                        <div class="card-body">
+                            @Html.Action("SendEmail", "Shop")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @Scripts.Render("~/Scripts/jquery")
+    @Scripts.Render("~/Scripts/bootstrap.js")
+
+    @RenderSection("scripts", required: false)
+
+    <script src="~/Scripts/jquery-3.6.0.js"></script>
+    <script src="~/Scripts/jquery-3.6.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var myOffcanvas = document.getElementById('offcanvasScrolling');
+            var bsOffcanvas = new bootstrap.Offcanvas(myOffcanvas);
+            document.getElementById("OpenMenu").addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                bsOffcanvas.toggle();
+            });
+        });
+    </script>
+
+    <script>
+        var btns = document.getElementsByClassName("nav-item-mobile");
+        var offcan = document.getElementById("offcanvasScrolling");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].onclick = function () {
+                offcan.classList.remove("show");
+            }
+        }
+    </script>
+</body>
+</html>

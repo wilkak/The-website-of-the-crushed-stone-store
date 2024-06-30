@@ -1,0 +1,191 @@
+﻿@model IEnumerable<Shebenka.Models.ViewModels.Shop.ProductVM>
+
+@{
+    ViewBag.Title = "Товары";
+}
+
+<script src="https://cdn.maptiler.com/maplibre-gl-js/v2.2.0-pre.2/maplibre-gl.js"></script>
+<link href="https://cdn.maptiler.com/maplibre-gl-js/v2.2.0-pre.2/maplibre-gl.css" rel="stylesheet" />
+
+@*<link rel="stylesheet" type="text/css" href="~/lightbox2-dev/dist/css/lightbox.min.css">
+    <script src="~/lightbox2-dev/dist/js/lightbox-plus-jquery.min.js"></script>*@
+
+<link rel="stylesheet" href="~/mk-lightbox-master/mklb/css/mklb.css" />
+
+@*<section class="section-top-index">
+        <div class="container section-top-index__container">
+            <div class="section-top-index__info _anim-items _anim-no-hide _active">
+                ООО "ТД" Александровское
+            </div>
+            <div class="section-top-index__btn">
+
+            </div>
+        </div>
+    </section>*@
+
+
+<section class="section-banner-video">
+    <video style="width:100%; height:100%;" muted autoplay="autoplay" loop="loop" controls="controls" poster="video/duel.jpg">
+        <source src="~/Content/img/Banner-video/banner.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+    </video>
+</section>
+
+
+
+<section class="section-content" id="section-products">
+    <div class="container container-product" style="min-height:500px;">
+        <div class="container-product-header">
+            <h1>Продукция</h1>
+        </div>
+        <div id="main">
+            <div class="row row-cols-1 row-cols-md-3 g-4 product-items-block">
+                @foreach (var item in Model)
+                {
+                    <div class="col product-item">
+                        <div class="card product-card h-100">
+                            <div class="hovereffect">
+                                <a href="/shop/product-details/@item.Slug">
+                                    @if (item.ImageName != null)
+                                    {
+                                        <img src="/Images/Uploads/Products/@item.Id/@item.ImageName" class="card-img-top" alt="...">
+                                    }
+                                    else
+                                    {
+                                        <img src="/Content/img/no_image_big.png" class="card-img-top" alt="...">
+                                    }
+                                </a>
+                            </div>
+                            <div class="card-body product">
+                                <h5 class="card-title product">@Html.DisplayFor(modelItem => item.Name)</h5>
+                                @*<p style="margin-bottom: 0 !important; font-family: 'Montserrat', sans-serif; color: #162b32;">от</p>*@
+                                <p class="category-price category-search">
+                                    <a>@Html.DisplayFor(modelItem => item.Price)₽</a>
+                                    @if (item.OldPrice != 0.00m)
+                                    {
+                                        <a class="old-price"> @Html.DisplayFor(modelItem => item.OldPrice)₽</a>
+                                    }
+                                </p>
+                                <form action="/shop/product-details/@item.Slug">
+                                    <center><button href="/shop/product-details/@item.Slug" class="btn-type1">Подробнее</button></center>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-gallery" id="section-gallery">
+    <div class="section-contact-header">
+        <h1>Галерея</h1>
+    </div>
+    <div class="section-contact_container">
+        <div class="main-gallery">
+            <img class="mklbItem demo" src="~/Content/img/Gallery/video1preview.jpg" data-video-src="/Content/img/Gallery/video1.mp4">
+            <img class="mklbItem demo" src="~/Content/img/Gallery/video2preview.jpg" data-video-src="/Content/img/Gallery/video2.mp4">
+            <img class="mklbItem demo" data-gallery="myGal" src="~/Content/img/Gallery/img1.jpg">
+            <img class="mklbItem demo" data-gallery="myGal" src="~/Content/img/Gallery/img3.jpg">
+            <img class="mklbItem demo" data-gallery="myGal" src="~/Content/img/Gallery/img4.jpg">
+            <img class="mklbItem demo" src="~/Content/img/Gallery/video3preview.jpg" data-video-src="/Content/img/Gallery/video3.mp4">
+            <img class="mklbItem demo" src="~/Content/img/Gallery/video4preview.jpg" data-video-src="/Content/img/Gallery/video4.mp4">
+            <img class="mklbItem demo" src="~/Content/img/Gallery/video5preview.jpg" data-video-src="/Content/img/Gallery/video5.mp4">
+            <img class="mklbItem demo" data-gallery="myGal" src="~/Content/img/Gallery/img2.jpg">
+        </div>
+    </div>
+</section>
+
+<section class="section-about" id="section-about">
+    <div class="row section-about_container">
+        <div class="col section-about_img-block">
+            <div class="section-about_text-img" style="z-index:2">
+                <h1 class="section-about__title">О нас</h1>
+                <p class="section-about__text">
+                    Александровский карьер расположен в республике Башкортостан, Белорецкий район.
+                </p>
+                <p class="section-about__text">
+                    Здесь в промышленных масштабах добывается кубовидный щебень для устройства дорожных покрытий автомагистралей, оснований при сооружении автострад, в асфальтобетоне.
+                </p>
+                <p class="section-about__text">
+                    Вся наша продукция имеет сертификаты и документы в соответствии качества материала.
+                </p>
+                <p class="section-about__text">
+                    Обратившись в нашу компанию вы сможете заказать любой объем кубовидного щебня.
+                </p>
+                <p class="section-about__text">
+                    Мы работаем, как с физическими, так и с юридическими лицами.
+                </p>
+            </div>
+        </div>
+        <div class="col section-about_text-block">
+            <div class="section-about_text">
+                <h1 class="section-about__title">О нас</h1>
+                <p class="section-about__text">
+                    Александровский карьер расположен в республике Башкортостан, Белорецкий район.
+                </p>
+                <p class="section-about__text">
+                    Здесь в промышленных масштабах добывается кубовидный щебень для устройства дорожных покрытий автомагистралей, оснований при сооружении автострад, в асфальтобетоне.
+                </p>
+                `				<p class="section-about__text">
+                    Вся наша продукция имеет сертификаты и документы в соответствии качества материала.
+                </p>
+                <p class="section-about__text">
+                    Обратившись в нашу компанию вы сможете заказать любой объем кубовидного щебня.
+                </p>
+                <p class="section-about__text">
+                    Мы работаем, как с физическими, так и с юридическими лицами.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="section-contact" id="section-contact">
+    <div class="section-contact-header">
+        <h1>Контакты</h1>
+    </div>
+    <div class="row section-contact_container">
+        <div class="col-md-6 col-ex d-flex flex-column section-contact_map-block">
+            <div id="map" class="map">
+            </div>
+        </div>
+        <div class="col-md-6 col-ex d-flex flex-column section-contact_text-block">
+            <div class="section-contact_text">
+                <h5 class="section-contact__title" style="margin-bottom:5px">Телефон:</h5>
+                <a class="section-contact__text" href="tel:+73516133336">+7 (35161) 3-33-36</a>
+                </br>
+                <a class="section-contact__text" href="tel:+79127924555">+7 (912) 792-45-55</a>
+                </br>
+                <a class="section-contact__text" href="tel:+79993717555">+7 (999) 371-75-55</a>
+                <h5 class="section-contact__title" style="margin-top:20px;margin-bottom:5px">Почта:</h5>
+                <a class="section-contact__text" href="mailto:tdalex2021@mail.ru">tdalex2021@mail.ru</a>
+                <h5 class="section-contact__title" style="margin-top:20px;margin-bottom:5px">Адрес:</h5>
+                <a>Офис: </a> <a class="section-contact__text">Челябинская область, г. Сатка, ул. 100-летия комбината Магнезит 3б</a>
+                </br>
+                <a>Станция отгрузки: </a><a class="section-contact__text">ст. Тюльма Кбш. жд</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    const key = 'G7EEzskg5UZbwVTG2LLd';
+    const map = new maplibregl.Map({
+        container: 'map', // container id
+        style: `https://api.maptiler.com/maps/streets/style.json?key=${key}`, // style URL
+        center: [58.5, 55.053464], // starting position [lng, lat]
+        zoom: 5, // starting zoom
+    });
+    map.addControl(new maplibregl.NavigationControl(), 'top-right');
+
+    const marker = new maplibregl.Marker().setPopup(new maplibregl.Popup().setHTML('<a class="markerPopup">Офис</a>')).setLngLat([58.979321, 55.053464]).addTo(map);
+
+    const marker2 = new maplibregl.Marker().setPopup(new maplibregl.Popup().setHTML('<a class="markerPopup">Станция отгрузки</a>')).setLngLat([57.590338, 54.304358]).addTo(map);
+
+</script>
+
+<script src="~/mk-lightbox-master/mklb/js/mklb.js"></script>

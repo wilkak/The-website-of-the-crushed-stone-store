@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Shebenka.Models.ViewModels.Email.EmailListVM>
+
+@{
+    ViewBag.Title = "Заказы";
+}
+<!--постраничный функционал-->
+@using PagedList.Mvc;
+@using PagedList;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+<section class="section-content">
+    <div class="container container-content" style=" margin-bottom: 40px;       min-height: 500px;">
+        <div class="row">
+            <div class="col">
+                <div class="allProductsCardBlock">
+                    <div class="card allProductsCard">
+                        <div class="card-header allProductsCardHeader" id="allProductsCardHeaderDesktop">
+                            Заказы
+                        </div>
+                        <div class="card-header allProductsCardHeader" id="allProductsCardHeaderMobile">
+                            Заказы
+                        </div>
+                    </div>
+                    @foreach (var item in ViewBag.OnePageOfTelefons)
+                    {
+
+                        <div class="card" style="margin-bottom:40px;">
+                            <h5 class="card-header" style="padding-left:18px !important; font-size:16px">Тема сообщения: @item.subject</h5>
+                            <div class="card-body">
+                                <p class="card-text">Текст сообщения:  @item.htmlMessage</p>
+                                <p class="card-text">Имя:       @item.name</p>
+                                <p class="card-text">Телефон:       @item.telefon</p>
+                                <p class="card-text">Название продукта:       @item.productname</p>
+                                <p class="card-text">Дата:       @item.Date</p>
+
+                                @Html.ActionLink("Удалить", "DeleteZvonok", new { id = item.Id }, new { @class = "btn btn-danger btn-green btn-delete del-zvon-desktop", style = "width:150px" })
+                                <center>  @Html.ActionLink("Удалить", "DeleteZvonok", new { id = item.Id }, new { @class = "btn btn-danger btn-green btn-delete del-zvon-mobile", style = "width:150px" })</center>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <center>@Html.PagedListPager((IPagedList)ViewBag.OnePageOfTelefons, page => Url.Action("Telefons", new { page }))</center>
+</section>
+
+

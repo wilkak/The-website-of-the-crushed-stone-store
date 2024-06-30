@@ -1,0 +1,371 @@
+﻿
+/*section-admin*/
+
+
+
+.btn-edit {
+    background: #018A76;
+    color: white;
+    border: 1px solid #018A76;
+    width: 100%;
+    height: 38px;
+    border-radius: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+    .btn-edit:hover {
+        background: white;
+        color: #018A76;
+    }
+
+    .btn-edit:focus {
+        background: white;
+        color: #018A76;
+    }
+
+
+.btn-delete {
+    background: #C41E3A;
+    border: 1px solid #C41E3A;
+    color: white;
+    width: 100%;
+    height: 38px;
+    border-radius: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+    .btn-delete:hover {
+        background: white;
+        border: 1px solid #C41E3A;
+        color: #C41E3A;
+    }
+
+
+    .btn-delete:focus {
+        background: white;
+        border: 1px solid #C41E3A;
+        color: #C41E3A;
+    }
+
+@media(max-width:1400px) {
+    .btn-edit {
+        font-size: 12px;
+        padding: 10px 6px;
+    }
+
+    .btn-delete {
+        font-size: 12px;
+        padding: 10px 6px;
+    }
+}
+
+@media(max-width:770px) {
+    .btn-edit {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+
+    .btn-delete {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+}
+
+
+#addProductBlockMobile {
+    display: none;
+}
+
+
+#allProductsCardHeaderMobile {
+    display: none;
+}
+
+#allProductsCardHeaderDesktop {
+    display: inline;
+}
+
+#editeDeliteBlockMobile {
+    display: none;
+}
+
+#editeDeliteBlockDesktop {
+    display: inline;
+}
+
+@media(max-width: 991px) {
+    #addProductBlock {
+        display: none;
+    }
+
+    #addProductBlockMobile {
+        display: inline;
+        margin-bottom: 25px;
+    }
+
+    .addProductCard {
+        /*   padding: 1rem 1rem !important;*/
+    }
+
+    #allProductsCardHeaderMobile {
+        display: inline;
+    }
+
+    #allProductsCardHeaderDesktop {
+        display: none;
+    }
+
+    .CardOfProductTitle {
+        padding: 0rem 0rem !important;
+    }
+}
+
+
+
+@media(max-width: 767px) {
+
+    #editeDeliteBlockMobile {
+        display: inline;
+        width: 100%;
+    }
+
+    #editeDeliteBlockDesktop {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+h5 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: #54a15d;
+    font-weight: 600;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    z-index: 2;
+    color: #ffffff !important;
+    cursor: default;
+    background-color: #018A76 !important;
+    border-color: #018A76 !important;
+    border-radius:0px !important;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+
+.pagination > li > a, .pagination > li > span {
+    color: #018A76 !important;
+}
+
+
+.card1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: none;
+    border-radius: 0.25rem;
+    box-shadow: 3px 5px 35px rgb(86 68 169 / 10%);
+}
+
+.p-3 {
+    padding: 0 !important;
+}
+
+
+
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1rem 1rem;
+    height: 100%;
+}
+
+    .card-body p {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+
+.card-header {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    padding: 0.5rem 0rem !important;
+}
+
+.list-group-item {
+    padding: 0.5rem 0.05rem !important;
+    border: none !important;
+}
+
+.card-text {
+    font-size: 14px;
+}
+
+.addProductCard {
+    border: none;
+    padding: 1rem 2rem;
+    box-shadow: 3px 5px 35px rgb(86 68 169 / 10%);
+}
+
+@media(max-width:540px){
+    .allProductsCardBlock {
+        padding: 1rem 0.8rem !important;
+    }
+}
+
+.addProductCardBody {
+    padding: 0rem 0rem !important;
+}
+
+.card-title {
+    font-size: 18px !important;
+    margin-bottom: 0;
+    padding: 1rem 0rem;
+}
+
+.allProductsCard {
+    border: none !important;
+}
+
+.allProductsCardHeader {
+    background: none !important;
+    border: none !important;
+    font-size: 18px !important;
+    border: none !important;
+    padding: 1rem 0rem !important;
+}
+
+.allProductsCardBlock {
+    padding: 1rem 2rem;
+    background: white;
+    box-shadow: 3px 5px 35px rgb(86 68 169 / 10%);
+}
+
+.allProductsCardItem {
+   
+    overflow: hidden;
+}
+
+
+.backtoproducts-link {
+    color: black;
+    text-decoration: none !important;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.backtoproducts-link:hover {
+    color: #018A76;
+}
+
+.addProductHeader {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+@media(max-width:990px) {
+    .addProductHeader {
+        font-size:22px;
+    }
+}
+/*section-admin*/
+
+
+th {
+   font-family: 'Montserrat', sans-serif;
+}
+
+td {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.del-zvon-desktop {
+    display: inline;
+}
+
+.del-zvon-mobile {
+    display: none;
+}
+
+@media(max-width:990px) {
+    .del-zvon-desktop {
+        display:none;
+    }
+
+    .del-zvon-mobile {
+        display: inline;
+    }
+}
+
+
+
+/*Добавление картинки*/
+
+
+.input-file {
+	position: relative;
+	display: inline-block;
+}
+
+
+.input-file span {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    font-size: 14px;
+    vertical-align: middle;
+    color: #018A76;
+    text-align: center;
+    background-color: #fff;
+    border: 1.7px solid #018A76 !important;
+    line-height: 22px;
+    height: 40px;
+    padding: 6px 10px 10px 10px;
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+    transition: background-color 0.2s;
+    margin-bottom: 20px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.input-file input[type=file] {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+	display: block;
+	 width: 0;
+	height: 0;
+}
+
+/* Focus */
+.input-file input[type=file]:focus + span {
+	box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+	}
+
+/* Hover/active */
+.input-file:hover span {
+	background-color: #018A76;
+	color:#fff;
+}
+
+.input-file:active span {
+	background-color: #018A76;
+	color:#fff;
+}
+
+/* Disabled */
+.input-file input[type=file]:disabled + span {
+	background-color: #eee;
+}

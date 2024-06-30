@@ -1,0 +1,38 @@
+﻿
+@model Shebenka.Models.ViewModels.Email.EmailVM
+
+@using (Html.BeginForm("SendEmail", "Shop", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-outline mb-4">
+        <center>
+            @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control", placeholder = "Имя" } })
+            @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+        </center>
+    </div>
+
+    <div class="form-outline mb-4">
+        @Html.EditorFor(model => model.telefon, new { htmlAttributes = new { @class = "form-control", placeholder = "Телефон" } })
+        @Html.ValidationMessageFor(model => model.telefon, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-outline mb-4">
+        <center>
+            @Html.TextAreaFor(model => model.htmlMessage, new { @class = "form-control", PlaceHolder = "Текст сообщения" })
+            @Html.ValidationMessageFor(model => model.htmlMessage, "", new { @class = "text-danger" })
+        </center>
+    </div>
+    <input type="hidden" name="productname" value="Не указано" />
+    <input type="hidden" name="email" value="street.travel@streettravel.net" />
+    <input type="hidden" name="subject" value="Заказ" />
+    <div style=" font-size: 12px;">
+        Нажимая на кнопку вы даёте своё согласие на обработку ваших персональных данных, в соответствии с <a style="color: #018A76;" href="Info/PoliticsConfidence">политикой конфиденциальности</a>
+    </div>
+    <div class="form-outline mb-4" style="margin-bottom:0px !important; margin-top:25px">
+        <center>
+            <button class="btn-type1 " type="submit">Отправить</button>
+        </center>
+    </div>
+
+}

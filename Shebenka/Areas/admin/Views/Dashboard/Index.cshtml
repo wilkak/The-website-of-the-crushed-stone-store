@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "Панель управления";
+}
+
+<style>
+    .card i {
+        font-size: 50px;
+        margin-top: 30px;
+        color: #018A76;
+    }
+
+    .card {
+        border: none;
+        box-shadow: 3px 5px 35px rgb(86 68 169 / 10%);
+    }
+
+        .card a {
+            text-decoration: none;
+            color: black !important;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .card p {
+            text-decoration: none;
+            color: black !important;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .card:hover i {
+            color: #015d52;
+        }
+
+        .card:focus i {
+            color: #015d52;
+        }
+</style>
+<section style="margin-top:70px">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card h-100">
+                <a href="/admin/Shop/Products">
+                    <center>   <i class="fa-solid fa-file-circle-plus"></i></center>
+                    <div class="card-body">
+                        <h5 class="card-title">Добавление товара</h5>
+
+                        <p class="card-text">Добавьте новый товар, которого еще нет на сайте</p>
+                    </div>
+                    </a>
+</div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <a href="/admin/Zvonki/Telefons">
+                    <center> <i class="fa-solid fa-address-book"></i></center>
+                    <div class="card-body">
+                        <h5 class="card-title">Заказы</h5>
+                        <p class="card-text">Просмотрите заказы оставленные посетителями</p>
+                    </div>
+                    </a>
+                </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <a href="/">
+                    <center><i class="fa-solid fa-right-from-bracket"></i></center>
+                    <div class="card-body">
+                        <h5 class="card-title">Выход</h5>
+                        <p class="card-text">Выйдите из меню администратора и возвращения в магазин</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+      
+    </div>
+
+   
+</section>

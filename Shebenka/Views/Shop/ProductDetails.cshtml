@@ -1,0 +1,191 @@
+﻿
+
+@model Shebenka.Models.ViewModels.Shop.ProductVM
+
+@{
+    ViewBag.Title = "Информация о товаре";
+}
+
+
+
+<link rel="stylesheet" type="text/css" href="~/lightbox2-dev/dist/css/lightbox.min.css">
+<script src="~/lightbox2-dev/dist/js/lightbox-plus-jquery.min.js"></script>
+
+<section class="section-productdetails">
+    <div class="container container-content">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="tour-package-details">
+                    <div class="pd-header">
+                        <div class="pd-thumb">
+                            @if (Model.ImageName != null)
+                            {
+                                <a data-lightbox="mygallery" href="/Images/Uploads/Products/@Model.Id/@Model.ImageName">
+                                    <img src="/Images/Uploads/Products/@Model.Id/@Model.ImageName" width="856" height="578" class="img-fluid wp-post-image" alt="england" sizes="(max-width: 856px) 100vw, 856px">
+                                </a>
+                            }
+                            @if (Model.ImageName == null)
+                            {
+                                <a data-lightbox="mygallery" href="/Content/img/no_image_big.png">
+                                    <img src="/Content/img/no_image_big.png" width="856" height="578" style="border-radius:10px" class="img-fluid wp-post-image" alt="england" sizes="(max-width: 856px) 100vw, 856px">
+                                </a>
+                            }
+
+
+
+                        </div>
+                    </div>
+                    <div class="package-details-tabs" style="margin-top:30px">
+                        <ul class="nav nav-pills tab-switchers gap-xxl-4 gap-3" id="pills-tab" role="tablist">
+                            <li class="nav-item product-details-nav" role="presentation">
+                                <button class="btn-product-details-information active" id="pills-package1" data-bs-toggle="pill" data-bs-target="#pill-body1" type="button" role="tab" aria-controls="pill-body1" aria-selected="true"><i class="bi bi-info-lg"></i> Описание</button>
+                            </li>
+                            <li class="nav-item product-details-nav" role="presentation">
+                                <button class="btn-product-details-information" id="pillspackage2" data-bs-toggle="pill" data-bs-target="#pill-body2" type="button" role="tab" aria-controls="pill-body2" aria-selected="false"><i class="bi bi-geo-alt"></i>Информация</button>
+                            </li>
+                            <li class="nav-item product-details-nav" role="presentation">
+                                <button class="btn-product-details-information" id="pillspackage4" data-bs-toggle="pill" data-bs-target="#pill-body4" type="button" role="tab" aria-controls="pill-body4" aria-selected="false"><i class="bi bi-geo-alt"></i>Галерея</button>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content" id="pills-tabContent" style="margin-bottom:20px">
+                            <!-- package info tab -->
+                            <div class="tab-pane fade show active package-info-tab mt-3" id="pill-body1" role="tabpanel" aria-labelledby="pills-package1">
+                                <h3 class="product-details-information-header">Описание</h3>
+                                @Html.TextAreaFor(model => model.Description, new { @id = "descriptionText", style = "display:none !important" })
+                                <p style=" font-family: 'Montserrat', sans-serif;" id="description"></p>
+                            </div>
+
+                            <div class="tab-pane fade package-info-tab mt-3" id="pill-body2" role="tabpanel" aria-labelledby="pills-package2">
+                                <h3 class="product-details-information-header">Информация</h3>
+                                <p style=" font-family: 'Montserrat', sans-serif;">
+                                    Адрес:
+                                    </br>
+                                    <a>Офис: Челябинская область, г. Сатка, ул. 100-летия комбината Магнезит 3б</a>
+                                    </br>
+                                    <a>Станция отгрузки: ст. Тюльма Кбш. жд</a>
+                                </p>
+                                <p style=" font-family: 'Montserrat', sans-serif;">
+                                    Телефон:
+                                    </br>
+                                    <a class="section-contact__text" style="font-size:16px" href="tel:+73516133336">+7 (35161) 3-33-36</a>
+                                    </br>
+                                    <a class="section-contact__text" style="font-size:16px" href="tel:+79127924555">+7 (912) 792-45-55</a>
+                                    </br>
+                                    <a class="section-contact__text" style="font-size:16px" href="tel:+79993717555">+7 (999) 371-75-55</a>
+                                </p>
+                            </div>
+
+                            <div class="tab-pane fade package-location-tab mt-3" id="pill-body4" role="tabpanel" aria-labelledby="pills-package3">
+                                <h3 class="product-details-information-header">Галерея</h3>
+                                <div class="product-details-gallery">
+                                
+                                        @if (Model.GalleryImages != null)
+                                        {
+                                            foreach (var image in Model.GalleryImages)
+                                            {
+                                                <a data-lightbox="mygallery" href="/Images/Uploads/Products/@Model.Id/Gallery/@image">
+                                                    <img src="/Images/Uploads/Products/@Model.Id/Gallery/@image" />
+                                                </a>
+                                            }
+                                        }
+                                    
+                                    else
+                                    {
+                                        <p style=" font-family: 'Montserrat', sans-serif;">В галерее нет изображений</p>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="product-details-package-sidebar" style="padding:0px !important">
+                    <div id="block-15" class="blog-widget widget_block">
+                        <div class="widget-title text-center">
+                            <h4 style="font-family: 'Montserrat', sans-serif;">@Html.DisplayFor(model => model.Name)</h4>
+                        </div>
+                        <div class="widget-body">
+                            <center>
+
+                            </center>
+                            <center>
+                                <h5 class="product-details-package-sidebar-price">
+                                    <a>@Html.DisplayFor(model => model.Price)₽/тн. с учетом НДС 20%</a>
+                                    </br>
+                                    @if (Model.OldPrice != 0.00m)
+                                    {
+                                        <a class="old-price" style="margin-top:20px">@Html.DisplayFor(model => model.OldPrice)₽/тн. с учетом НДС 20%</a>
+                                    }
+                                </h5>
+                            </center>
+                            <center>
+                                <button type="button" class="btn-type1 btn-zakaz-zv" style="margin-top:10px" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Заказать звонок
+                                </button>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Модальное окно -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body" style="text-align: center;">
+                @using (Html.BeginForm("SendEmail", "Shop", FormMethod.Post))
+                {
+                    <div class="card " style="border:none;">
+                        <div class="card-body ">
+                            <div class="form-outline mb-4">
+
+                                <center>
+                                    <input type="text" name="name" placeholder="Имя" class="form-control " />
+                                </center>
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <center>
+                                    <input type="text" name="telefon" placeholder="Телефон" class="form-control" />
+                                </center>
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <textarea type="text" name="htmlMessage" placeholder="Текст сообщения" class="form-control"></textarea>
+                            </div>
+
+                            <input type="hidden" name="productname" value="@Model.Name" />
+                            <input type="hidden" name="email" value="street.travel@streettravel.net" />
+                            <input type="hidden" name="subject" value="Заказ" />
+                            <div style=" font-size: 12px;">
+                                Нажимая на кнопку вы даёте своё согласие на обработку ваших персональных данных, в соответствии с <a style="color: #018A76;"  href="Info/PoliticsConfidence">политикой конфиденциальности</a>
+                            </div>
+                            <div class="form-outline mb-4" style="margin-bottom:0px !important; margin-top:25px">
+                                <center>
+                                    <button class="btn-type1 " type="submit">Отправить</button>
+                                </center>
+                            </div>
+                        </div>
+
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    window.addEventListener('load', (event) => {
+        const description = document.getElementById('descriptionText');
+        var descriptionValue = description.value.replace(/\n/g, '<br/>');
+        document.getElementById('description').innerHTML = descriptionValue;
+    });
+</script>

@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Админ зона</title>
+    @* @Styles.Render("~/Content/css")
+            @Scripts.Render("~/bundles/modernizr")
+
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/Scripts/modernizr")
+    *@
+    <script src="https://kit.fontawesome.com/a0728c37d3.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@900&display=swap" rel="stylesheet">
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/admin-zone.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+    @*Scripts.Render("~/Scripts/modernizr")*@
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container container-nav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li>
+                        <a class="nav-item" style="text-decoration: none; font-family: 'Montserrat', sans-serif; color:white" href="/admin/Dashboard">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Продукты", "Products", "Shop", "", new { @class = "nav-item", style = "text-decoration: none; font-family: 'Montserrat', sans-serif; color:white" })
+                    </li>
+
+                    <li class="nav-item">
+                        @Html.ActionLink("Заказы", "Telefons", "Zvonki", "", new { @class = "nav-item", style = "text-decoration: none; font-family: 'Montserrat', sans-serif; color:white" })
+                    </li>
+                </ul>
+                <span class="navbar-text" style="font-family: 'Montserrat', sans-serif;">
+                    <a class="nav-item" href="/" style="text-decoration: none; font-family: 'Montserrat', sans-serif; color:white">
+                        Выход
+                    </a>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title" id="offcanvasExampleLabel" style="font-family: 'Montserrat', sans-serif; color: #018A76;">Меню</h2>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div>
+                <ul class="navbar-nav navbar-nav-mobile me-auto mb-2 mb-lg-0">
+                    <li>
+                        <a class="nav-item" style="text-decoration: none; font-size:16px; font-family: 'Montserrat', sans-serif; color:black" href="/admin/Dashboard">Главная</a>
+                    </li>
+
+
+                    <li>
+                        @Html.ActionLink("Продукты", "Products", "Shop", "", new { @class = "nav-item", style = "text-decoration: none; font-size:16px;font-family: 'Montserrat', sans-serif; color:black" })
+                    </li>
+
+                    <li>
+                        @Html.ActionLink("Заказы", "Telefons", "Zvonki", "", new { @class = "nav-item", style = "text-decoration: none;font-size:16px; font-family: 'Montserrat', sans-serif; color:black" })
+                    </li>
+
+                    <li>
+                        <a class="nav-item" href="/" style="text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 16px; color: black ">
+                            Выход
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    @*  @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/Scripts/bootstrap.js")
+        @Scripts.Render("~/Scripts/modernizr")
+        @Scripts.Render("~/Scripts/jquery")
+        @RenderSection("scripts", required: false)
+    *@
+    @*Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/Scripts/jquery")
+        @Scripts.Render("~/Scripts/bootstrap.js")
+        @RenderSection("scripts", required: false)
+    *@
+    @Scripts.Render("~/bundles/jquery")
+    @*Scripts.Render("~/Scripts/jquery")*@
+    @Scripts.Render("~/Scripts/bootstrap.js")
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
